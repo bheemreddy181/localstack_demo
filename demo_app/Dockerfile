@@ -13,5 +13,6 @@ COPY . /app
 WORKDIR /app
 
 RUN mix deps.get
+RUN mix local.rebar --force
 
 CMD mix phoenix.server
