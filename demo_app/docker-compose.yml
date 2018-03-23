@@ -1,0 +1,18 @@
+version: '2.1'
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - "4000:4000"
+  localstack:
+    image: localstack/localstack
+    links:
+      - "web"
+    environment:
+      SERVICES: s3, lambda, sns
+      DEFAULT_REGION: us-east-1
+      HOSTNAME: localstack
+    ports:
+      - "4567-4583:4567-4583"
+      - "8080:8080"
