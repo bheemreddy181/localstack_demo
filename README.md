@@ -1,3 +1,8 @@
+This is a small demo app to illustrate using localstack to test subscribing an HTTP/HTTPS endpoint to an SNS topic.
+
+To test the app:
+* Make sure you have the aws cli installed
+* From the `demo_app` directory, run `docker-compose up`
 * Create an SNS topic:
 ```
 aws --endpoint-url=http://localhost:4575 sns create-topic --name test-topic
@@ -25,3 +30,4 @@ aws sns subscribe --endpoint-url=http://localhost:4575 --topic-arn arn:aws:sns:u
 ```
 aws --endpoint-url=http://localhost:4575 sns publish  --topic-arn arn:aws:sns:us-east-1:123456789012:test-topic --message 'Test Message!'
 ```
+* Check out the server logs! Your published message should have been received by the Phoenix app and logged in the server logs. :)
