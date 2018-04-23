@@ -10,7 +10,7 @@ defmodule DemoAppWeb.Router do
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["json", "text"]
   end
 
   scope "/", DemoAppWeb do
@@ -22,6 +22,6 @@ defmodule DemoAppWeb.Router do
   scope "/api", DemoAppWeb do
     pipe_through :api
 
-    post "/sns_webhook", PageController, :sns_webhook
+    post "/sns_webhook", ApiController, :sns_webhook
   end
 end

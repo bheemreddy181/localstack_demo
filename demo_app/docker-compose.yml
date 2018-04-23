@@ -10,12 +10,10 @@ services:
     links:
       - "web"
     environment:
-      SERVICES: s3, lambda, sns
+      SERVICES: s3, sns
       DEFAULT_REGION: us-east-1
       HOSTNAME: localstack
       EXTERNAL_HOSTNAME: localstack
-      LAMBDA_EXECUTOR: docker
-      DOCKER_HOST: unix:///var/run/docker.sock
     ports:
       - "4567-4583:4567-4583"
       - "8080:8080"
