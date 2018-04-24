@@ -9,7 +9,7 @@ aws --endpoint-url=http://localhost:4572 s3api create-bucket --bucket test-bucke
 echo "===============================================" &&
 echo "Putting Object in S3 Bucket" &&
 echo "===============================================" &&
-aws --endpoint-url=http://localhost:4572 s3api put-object --bucket test-bucket --key hello --body setup.md &&
+aws --endpoint-url=http://localhost:4572 s3api put-object --bucket test-bucket --key hello --body README.md &&
 echo "===============================================" &&
 echo "Listing Objects in S3 Bucket" &&
 echo "===============================================" &&
