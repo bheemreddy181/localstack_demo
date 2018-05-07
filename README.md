@@ -2,8 +2,8 @@ This is a small demo app to illustrate using localstack to test subscribing an H
 
 To test the app:
 * Make sure you have the aws cli installed
-* From the `demo_app` directory, run `docker-compose up`
-* If you'd like to skip the below steps, you can run `sh setup.sh` instead. :)
+* From the base directory, run `docker-compose up`
+* If you'd like to skip the below steps, you can run `sh setup` instead. :)
 * Create an SNS topic:
 ```
 aws --endpoint-url=http://localhost:4575 sns create-topic --name test-topic
