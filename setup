@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "===============================================" &&
 echo "Creating SNS Topic" &&
 echo "===============================================" &&
@@ -21,4 +23,4 @@ aws --endpoint-url=http://localhost:4575 sns subscribe --topic-arn arn:aws:sns:u
 echo "===============================================" &&
 echo "Publishing Message to SNS Topic" &&
 echo "===============================================" &&
-aws --endpoint-url=http://localhost:4575 sns publish  --topic-arn arn:aws:sns:us-east-1:123456789012:test-topic --message 'Test Message!'
+aws --endpoint-url=http://localhost:4575 sns publish  --topic-arn arn:aws:sns:us-east-1:123456789012:test-topic --message '{"detail": {"status":"FAILED","jobId":"1234","jobName":"test-batch-job"}}'
